@@ -1,0 +1,8 @@
+
+
+
+flask
+pillow
+torch
+transformers
+gunicorn
