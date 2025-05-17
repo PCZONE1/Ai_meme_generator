@@ -1,6 +1,6 @@
 import os
 import torch
-print("1️⃣  Starting import…")
+print("1  Starting import…")
 
 from flask import Flask, render_template, request, redirect, url_for, jsonify
 from werkzeug.utils import secure_filename
@@ -17,7 +17,7 @@ ALLOWED_EXT = {'png', 'jpg', 'jpeg', 'gif'}
 os.makedirs(app.config['UPLOAD_FOLDER'], exist_ok=True)
 os.makedirs(app.config['MEME_FOLDER'], exist_ok=True)
 
-# ─── Load AI Models Locally ─────────────────────────────────────────
+# ─── Loading AI Models Locally ─────────────────────────────────────────
 print("2️⃣  Loading BLIP image-captioning model…")
 processor  = BlipProcessor.from_pretrained("Salesforce/blip-image-captioning-base")
 blip_model = BlipForConditionalGeneration.from_pretrained("Salesforce/blip-image-captioning-base")
@@ -97,7 +97,6 @@ def draw_wrapped_text(draw, img, lines, font, y_start):
     return y - y_start
 
 
-# ─── Routes ─────────────────────────────────────────────────────────
 @app.route('/', methods=['GET'])
 def index():
     return render_template('index.html')
