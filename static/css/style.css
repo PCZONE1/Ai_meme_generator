@@ -1,0 +1,86 @@
+body {
+  background: #f4f4f4;
+  font-family: Arial, sans-serif;
+  text-align: center;
+  margin: 0;
+  padding: 0;
+}
+
+.container {
+  max-width: 600px;
+  margin: 50px auto;
+  background: #fff;
+  padding: 30px;
+  border-radius: 8px;
+  box-shadow: 0 0 10px rgba(0,0,0,0.1);
+}
+
+input[type="file"],
+input[type="text"] {
+  width: 80%;
+  padding: 10px;
+  margin: 10px 0;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+}
+
+button {
+  padding: 10px 20px;
+  margin: 5px;
+  border: none;
+  background: #007BFF;
+  color: #fff;
+  font-size: 1em;
+  cursor: pointer;
+  border-radius: 4px;
+  transition: background 0.25s ease;
+}
+
+button:hover {
+  background: #0056b3;
+}
+
+/* Button group container on result page */
+.buttons {
+  display: flex;
+  justify-content: center;
+  gap: 1rem;
+  margin-top: 20px;
+}
+
+/* Anchor-based buttons */
+.button {
+  display: inline-block;
+  padding: 12px 24px;
+  font-size: 1rem;
+  font-weight: bold;
+  text-decoration: none;
+  color: #fff;
+  border-radius: 6px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  transition: background 0.25s ease, transform 0.1s ease;
+}
+
+/* Download meme button style */
+.button.download {
+  background: #007bff;
+}
+.button.download:hover {
+  background: #0069d9;
+  transform: translateY(-2px);
+}
+
+/* Make another button style */
+.button.create-again {
+  background: #28a745;
+}
+.button.create-again:hover {
+  background: #218838;
+  transform: translateY(-2px);
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+  margin: 20px 0;
+}
