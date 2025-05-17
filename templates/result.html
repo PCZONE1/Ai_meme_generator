@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Your Meme</title>
+  <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+</head>
+<body>
+  <div class="container">
+    <!-- <h1>😂 Here’s Your Meme!</h1> -->
+    <img src="{{ url_for('static', filename='memes/' + meme_file) }}" alt="Meme">
+    
+    <div class="buttons">
+      <a href="{{ url_for('static', filename='memes/' + meme_file) }}" download class="button download">
+        ⬇️ Download Meme
+      </a>
+      <a href="{{ url_for('index') }}" class="button create-again">
+        🔄 Make Another
+      </a>
+    </div>
+  </div>
+</body>
+</html>

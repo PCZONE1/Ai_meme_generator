@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Meme AI Generator</title>
+  <link rel="stylesheet" href="{{ url_for('static',filename='css/style.css') }}">
+</head>
+<body>
+  <div class="container">
+    <h1> Meme AI Generator</h1>
+
+    <form id="meme-form" action="{{ url_for('generate') }}"
+          method="post" enctype="multipart/form-data">
+      <input type="file" name="image" accept="image/*" required><br>
+      <input type="text" name="top_text"    placeholder="Top text"><br>
+      <input type="text" name="bottom_text" placeholder="Bottom text"><br>
+
+      <button type="button" id="ai-btn">Suggest AI Caption</button>
+      <button type="submit">Generate Meme</button>
+    </form>
+  </div>
+
+  <script>
+  document.getElementById('ai-btn').onclick = async () => {
+    const form = document.getElementById('meme-form');
+    const file = form.querySelector('input[type=file]').files[0];
+    if (!file) return alert("Pick an image first!");
+    let fd = new FormData();
+    fd.append('image', file);
+    let res = await fetch('/ai-captions', { method:'POST', body:fd });
+    if (!res.ok) return alert("AI suggestion failed");
+    let {top,bottom} = await res.json();
+    form.querySelector('input[name=top_text]').value    = top;
+    form.querySelector('input[name=bottom_text]').value = bottom;
+  };
+  </script>
+</body>
+</html>
