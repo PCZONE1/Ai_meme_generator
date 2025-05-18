@@ -75,6 +75,7 @@ All processing runs on the CPU under 16 GB of RAM—no GPU required.
    * Click **Generate Meme** to overlay text and view/download your meme.
 4. Result--     
 ![meme_IMG_20240720_193937_1](https://github.com/user-attachments/assets/f6047b83-b5be-441b-a6f3-5eb738f90be1)
+![interface](https://github.com/user-attachments/assets/10f9f28f-1f85-45d2-8fdc-e97862002113)
 
  Contributing
 
